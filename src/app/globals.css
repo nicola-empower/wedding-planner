@@ -1,26 +1,147 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+@theme {
+  /* Colors mapped to CSS variables for dynamic switching */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius: 1rem;
+
+  --font-sans: var(--font-lato);
+  --font-serif: var(--font-playfair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Base Theme (Sage - Default) */
+:root {
+  --background: hsl(30 20% 95%);
+  --foreground: hsl(24 5% 26%);
+
+  --primary: hsl(158 45% 30%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  --secondary: hsl(24 10% 60%);
+  --secondary-foreground: hsl(0 0% 100%);
+
+  --accent: hsl(350 70% 75%);
+  --accent-foreground: hsl(0 0% 100%);
+
+  --muted: hsl(30 10% 94%);
+  --muted-foreground: hsl(24 5% 50%);
+
+  --card: hsl(40 20% 98%);
+  --card-foreground: hsl(24 5% 26%);
+
+  --border: hsl(30 15% 85%);
+  --input: hsl(30 15% 85%);
+  --ring: hsl(158 45% 30%);
+}
+
+/* Ocean Theme */
+[data-theme="ocean"] {
+  --background: hsl(210 20% 98%);
+  --foreground: hsl(222 47% 11%);
+
+  --primary: hsl(221 83% 53%);
+  --primary-foreground: hsl(210 40% 98%);
+
+  --secondary: hsl(210 40% 96.1%);
+  --secondary-foreground: hsl(222 47% 11.2%);
+
+  --accent: hsl(199 89% 48%);
+  --accent-foreground: hsl(210 40% 98%);
+
+  --muted: hsl(210 40% 96.1%);
+  --muted-foreground: hsl(215.4 16.3% 46.9%);
+
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222 47% 11%);
+
+  --border: hsl(214.3 31.8% 91.4%);
+  --input: hsl(214.3 31.8% 91.4%);
+  --ring: hsl(221 83% 53%);
+}
+
+/* Rose Theme */
+[data-theme="rose"] {
+  --background: hsl(355 20% 98%);
+  --foreground: hsl(355 10% 20%);
+
+  --primary: hsl(346 60% 55%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  --secondary: hsl(355 20% 94%);
+  --secondary-foreground: hsl(355 10% 20%);
+
+  --accent: hsl(340 60% 85%);
+  --accent-foreground: hsl(355 10% 20%);
+
+  --muted: hsl(355 10% 95%);
+  --muted-foreground: hsl(355 5% 45%);
+
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(355 10% 20%);
+
+  --border: hsl(355 20% 90%);
+  --input: hsl(355 20% 90%);
+  --ring: hsl(346 60% 55%);
+}
+
+/* Lavender Theme */
+[data-theme="lavender"] {
+  --background: hsl(260 20% 98%);
+  --foreground: hsl(260 10% 20%);
+
+  --primary: hsl(262 50% 55%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  --secondary: hsl(260 15% 93%);
+  --secondary-foreground: hsl(260 10% 20%);
+
+  --accent: hsl(270 50% 85%);
+  --accent-foreground: hsl(260 10% 20%);
+
+  --muted: hsl(260 10% 95%);
+  --muted-foreground: hsl(260 5% 45%);
+
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(260 10% 20%);
+
+  --border: hsl(260 15% 90%);
+  --input: hsl(260 15% 90%);
+  --ring: hsl(262 50% 55%);
+}
+
+/* Custom Utilities */
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@layer base {
+  body {
+    /* Stronger Gradient: Rose top-left, Warm Gold top-right */
+    background-image:
+      radial-gradient(circle at 0% 0%, hsl(350 60% 92%) 0%, transparent 40%),
+      radial-gradient(circle at 100% 0%, hsl(40 40% 90%) 0%, transparent 40%);
+    background-attachment: fixed;
+    background-color: var(--color-background);
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
