@@ -4,6 +4,7 @@
 
 This application represents the future of event planning software. Blending elegant design with cutting-edge technology to simplify the most important day of your life.
 
+<img width="2853" height="1526" alt="image" src="https://github.com/user-attachments/assets/dfea65c4-a93c-487b-b7e2-ddaf640197a4" />
 
 ##  Key Features
 
